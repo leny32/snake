@@ -115,7 +115,7 @@ function move() {
 	moved = false;
 	
 	animateHead(oldx, posx, oldy, posy);
-/*
+
 	if (oldMoves.length > 1){
 		for (i=0; i <oldMoves.length-1; i++) {
 			let lastSquare = oldMoves[oldMoves.length-1-i];
@@ -123,7 +123,7 @@ function move() {
 			let nodelength = document.getElementById('bodyFolder').childNodes.length;
 			animateTail(lastSquare.x, secondLastSquare.x, lastSquare.y, secondLastSquare.y, nodelength-1-i);
 		}
-	} */
+	} 
 
     if (appleCords.x == posx && appleCords.y == posy) {
 		generateApple();
