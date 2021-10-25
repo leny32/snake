@@ -65,6 +65,8 @@ function generateApple() {
 	let newApple = working[getRandomInt(working.length)];
 	app = {x: (newApple.x*50)-50, y: (newApple.y*50)-50};
 
+	if (appleCords.x == app.x && appleCords.y == app.y) return generateApple();
+
     apple.style.top = app.y + 'px';
     apple.style.left =  app.x + 'px';
 
