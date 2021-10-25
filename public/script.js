@@ -1,7 +1,7 @@
 let posx = 0;
 let posy = 0;
 let direction = null;
-let interval = 100;
+let interval = 200;
 let t = setInterval(move, interval);
 let appleCords = { x: 0, y: 0 };
 let score = -1;
@@ -19,6 +19,12 @@ window.onload = function () {
 }
 
 genAllSquares();
+
+function changeDifficulty() {
+	interval = interval == 200 ? 150 : interval == 150 ? 100 : 200
+	clearInterval(t)
+	t = setInterval(move, interval)
+}
 
 document.addEventListener('keydown', keyTask);
 function keyTask(e) {
@@ -55,6 +61,9 @@ function keyTask(e) {
 		case 'KeyD':
 			direction = direction == 'left' ? 'left' : 'right';
 			moved = true;
+			break;
+		case 'Space':
+			changeDifficulty();
 			break;
 	}
 }
