@@ -1,7 +1,8 @@
 let posx = 0;
 let posy = 0;
 let direction = null;
-let t = setInterval(move, 200);
+let interval = 100;
+let t = setInterval(move, interval);
 let appleCords = { x: 0, y: 0 };
 let score = -1;
 let localStorage = window.localStorage;
@@ -172,7 +173,7 @@ function animateHead(xfrom, xto, yfrom, yto) {
 	let x = xfrom;
 	let y = yfrom;
 
-	let id = setInterval(frame, 200 / 50);
+	let id = setInterval(frame, interval / 50);
 	function frame() {
 		if (x == xto && y == yto) {
 			clearInterval(id);
@@ -201,7 +202,7 @@ function animateTail(xfrom, xto, yfrom, yto, bodypos) {
 	let x2 = (xto*50)-50;
 	let y2 = (yto*50)-50;
 
-	let id = setInterval(frame, 200 / 50);
+	let id = setInterval(frame, interval / 50);
 	function frame() {
 		if (x == x2 && y == y2) {
 			clearInterval(id);
