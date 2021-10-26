@@ -212,7 +212,7 @@ function move() {
 function failedGame() {
 	posx = 0;
 	posy = 0;
-	score = -1;
+	score = -1*diff;
 	localStorage.setItem('Highscore', highscore);
 	
 	let element = document.getElementById("bodyFolder");
