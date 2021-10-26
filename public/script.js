@@ -20,6 +20,7 @@ let rightDir = 'right';
 
 window.onload = function () {
 	generateApple();
+	changeDifficulty(1);
 }
 
 genAllSquares();
