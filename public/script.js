@@ -15,6 +15,7 @@ let upDir = 'up';
 let downDir = 'down';
 let leftDir = 'left';
 let rightDir = 'right';
+let diff = 1 ;
 
 /*------------------------------------------------------------*/
 
@@ -30,8 +31,9 @@ function changeSpeed() {
 	clearInterval(t)
 	t = setInterval(move, interval)
 }
-function changeDifficulty(diff){
-	switch (diff){
+function changeDifficulty(difficulty){
+	diff = difficulty;
+	switch (difficulty){
 		case 1:
 			downDir = 'down';
 			upDir = 'up';
@@ -51,10 +53,10 @@ function changeDifficulty(diff){
 			rightDir = 'up';
 			break;
 		case 4:
-			downDir = 'right';
-			upDir = 'left';
-			leftDir = 'up';
-			rightDir = 'down';
+			downDir = 'up';
+			upDir = 'right';
+			leftDir = 'down';
+			rightDir = 'left';
 			break;
 	}
 }
@@ -132,8 +134,8 @@ function generateApple() {
 
 	appleCords = { x: app.x, y: app.y };
 
-	score++;
-	if (score == 100) {
+	score += diff;
+	if (score == 98*diff) {
 		clearInterval(t);
 		alert('You win!');
 	}
