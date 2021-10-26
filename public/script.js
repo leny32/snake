@@ -11,6 +11,10 @@ let oldMoves = [{ x: 0, y: 0 }];
 let bodylength = 0;
 let allSqures = [];
 let moved = false;
+let upDir = 'down';
+let downDir = 'up';
+let leftDir = 'left';
+let rightDir = 'right';
 
 /*------------------------------------------------------------*/
 
@@ -20,50 +24,91 @@ window.onload = function () {
 
 genAllSquares();
 
-function changeDifficulty() {
+function changeSpeed() {
 	interval = interval == 200 ? 150 : interval == 150 ? 100 : 200
 	clearInterval(t)
 	t = setInterval(move, interval)
 }
+function changeDifficulty(diff){
+	switch (diff){
+		case 1:
+			downDir = 'down';
+			upDir = 'up';
+			leftDir = 'left';
+			rightDir = 'right';
+			break;
+		case 2:
+			downDir = 'up';
+			upDir = 'down';
+			leftDir = 'right';
+			rightDir = 'left';
+			break;
+		case 3:
+			downDir = 'left';
+			upDir = 'right';
+			leftDir = 'down';
+			rightDir = 'up';
+			break;
+		case 3:
+			downDir = 'right';
+			upDir = 'left';
+			leftDir = 'up';
+			rightDir = 'down';
+			break;
+	}
+}
+
 
 document.addEventListener('keydown', keyTask);
 function keyTask(e) {
 	if (moved) return;
 	switch (e.code) {
 		case 'ArrowUp':
-			direction = direction == 'down' ? 'down' : 'up';
+			direction = direction == downDir ? downDir : upDir;
 			moved = true;
 			break;
 		case 'ArrowDown':
-			direction = direction == 'up' ? 'up' : 'down';
+			direction = direction == upDir ? upDir : downDir;
 			moved = true;
 			break;
 		case 'ArrowLeft':
-			direction = direction == 'right' ? 'right' : 'left';
+			direction = direction == rightDir ? rightDir : leftDir;
 			moved = true;
 			break;
 		case 'ArrowRight':
-			direction = direction == 'left' ? 'left' : 'right';
+			direction = direction == leftDir ? leftDir : rightDir;
 			moved = true;
 			break;
 		case 'KeyW':
-			direction = direction == 'down' ? 'down' : 'up';
+			direction = direction == downDir ? downDir : upDir;
 			moved = true;
 			break;
 		case 'KeyS':
-			direction = direction == 'up' ? 'up' : 'down';
+			direction = direction == upDir ? upDir : downDir;
 			moved = true;
 			break;
 		case 'KeyA':
-			direction = direction == 'right' ? 'right' : 'left';
+			direction = direction == rightDir ? rightDir : leftDir;
 			moved = true;
 			break;
 		case 'KeyD':
-			direction = direction == 'left' ? 'left' : 'right';
+			direction = direction == leftDir ? leftDir : rightDir;
 			moved = true;
 			break;
 		case 'Space':
-			changeDifficulty();
+			changeSpeed();
+			break;
+		case 'Digit1':
+			changeDifficulty(1);
+			break;
+		case 'Digit2':
+			changeDifficulty(2);
+			break;
+		case 'Digit3':
+			changeDifficulty(3);
+			break;
+		case 'Digit4':
+			changeDifficulty(4);
 			break;
 	}
 }
