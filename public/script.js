@@ -98,19 +98,19 @@ function keyTask(e) {
 		case 'Space':
 			changeSpeed();
 			break;
-		case 'Digit1':
+		case 'KeyU':
 			changeDifficulty(1);
 			console.log('1');
 			break;
-		case 'Digit2':
+		case 'KeyI':
 			changeDifficulty(2);
 			console.log('2');
 			break;
-		case 'Digit3':
+		case 'KeyO':
 			changeDifficulty(3);
 			console.log('3');
 			break;
-		case 'Digit4':
+		case 'KeyP':
 			changeDifficulty(4);
 			console.log('4');
 			break;
