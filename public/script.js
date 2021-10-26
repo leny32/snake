@@ -100,15 +100,19 @@ function keyTask(e) {
 			break;
 		case 'Digit1':
 			changeDifficulty(1);
+			console.log('1');
 			break;
 		case 'Digit2':
 			changeDifficulty(2);
+			console.log('2');
 			break;
 		case 'Digit3':
 			changeDifficulty(3);
+			console.log('3');
 			break;
 		case 'Digit4':
 			changeDifficulty(4);
+			console.log('4');
 			break;
 	}
 }
