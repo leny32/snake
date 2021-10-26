@@ -11,8 +11,8 @@ let oldMoves = [{ x: 0, y: 0 }];
 let bodylength = 0;
 let allSqures = [];
 let moved = false;
-let upDir = 'down';
-let downDir = 'up';
+let upDir = 'up';
+let downDir = 'down';
 let leftDir = 'left';
 let rightDir = 'right';
 
