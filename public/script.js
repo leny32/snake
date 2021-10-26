@@ -49,7 +49,7 @@ function changeDifficulty(diff){
 			leftDir = 'down';
 			rightDir = 'up';
 			break;
-		case 3:
+		case 4:
 			downDir = 'right';
 			upDir = 'left';
 			leftDir = 'up';
@@ -98,19 +98,19 @@ function keyTask(e) {
 		case 'Space':
 			changeSpeed();
 			break;
-		case 'KeyU':
+		case 'Digit1':
 			changeDifficulty(1);
 			console.log('1');
 			break;
-		case 'KeyI':
+		case 'Digit2':
 			changeDifficulty(2);
 			console.log('2');
 			break;
-		case 'KeyO':
+		case 'Digit3':
 			changeDifficulty(3);
 			console.log('3');
 			break;
-		case 'KeyP':
+		case 'Digit4':
 			changeDifficulty(4);
 			console.log('4');
 			break;
