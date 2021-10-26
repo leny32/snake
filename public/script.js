@@ -27,7 +27,7 @@ window.onload = function () {
 genAllSquares();
 
 function changeSpeed() {
-	interval = interval == 200 ? 150 : interval == 150 ? 100 : 200
+	interval = interval == 200 ? 150 : interval == 150 ? 100 : interval == 100 ? 400 : interval == 400 ? 300 : 200
 	clearInterval(t)
 	t = setInterval(move, interval)
 }
