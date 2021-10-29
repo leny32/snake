@@ -136,6 +136,7 @@ function generateApple() {
 
 	score += diff;
 	if (score == 98*diff) {
+		highscore = 100*diff
 		clearInterval(t);
 		alert('You win!');
 	}
