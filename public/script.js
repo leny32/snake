@@ -197,7 +197,7 @@ function move() {
 			createTail();
 		}		
 		
-		if(highscore < score) highscore = score + 1;
+		if(highscore <= score) highscore = score + 1;
 
 
    	} else if (posx != oldx || posy != oldy){
