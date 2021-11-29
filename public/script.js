@@ -12,12 +12,15 @@ let allSquares = [];
 let moved = false;
 let startTime = 6000;
 let audio_timer = new Audio('media/audio_timer.mp3');
+let audio_t2 = new Audio('media/audio_timer.ogg');
 let audio_t3 = new Audio('media/audio_scifi.mp3');
 let audio_t4 = new Audio('media/audio_beep.mp3');
 audio_timer.play();
 audio_timer.volume = 0.2;
+audio_t2.volume = 0.3;
 audio_t3.volume = 0.4;
 audio_t4.volume = 0.5;
+audio_t2.loop = true;
 audio_t3.loop = true;
 audio_t4.loop = true;
 
@@ -65,7 +68,8 @@ let x = setInterval(() => {
 	let ms = startTime % 100;
 	if (startTime < 1) {
 		clearInterval(x);
-		failedGame();
+		if (score !== 25) verifyWin();
+		else failedGame();
 	}
 	let tr = document.getElementById('score');
 	tr.innerHTML = `${sec < 10 ? '0' + sec : sec}<span id="ms">${ms}</span>`;
@@ -118,7 +122,7 @@ function verifyWin() {
 	clearInterval(t);
 	clearInterval(x);
 	audio_timer.pause();
-	//audio_t2.pause();
+	audio_t2.pause();
 	audio_t3.pause();
 	audio_t4.pause();
 	let element = document.getElementById("bodyFolder");
@@ -202,12 +206,11 @@ function move() {
 			moveTail();
 		}
 	}
-
 }
 
 function failedGame() {
 	audio_timer.pause();
-	//audio_t2.pause();
+	audio_t2.pause();
 	audio_t3.pause();
 	audio_t4.pause();
 	clearInterval(x);
